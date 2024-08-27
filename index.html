@@ -1,0 +1,1737 @@
+<!doctype html><!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="output.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>frosty lamp</title>
+</head>
+<body>
+<!--- nav --->
+<nav class="hidden-on-startup">
+    <div class="navbar fixed">
+        <div class="container w-full flex justify-center">
+            <nav class="navbar-custom nav-link gap-1">
+                <ul>
+                    <li>
+                        <!-- SVG Button to open/close the offcanvas card -->
+                        <a href="#" id="toggleCartOffcanvas" class="transition-transform transform hover:scale-125">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="nav-svg transition-transform transform hover:scale-125">
+                                <path d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 0 0-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 0 0 0-1.5H5.378A2.25 2.25 0 0 1 7.5 15h11.218a.75.75 0 0 0 .674-.421 60.358 60.358 0 0 0 2.96-7.228.75.75 0 0 0-.525-.965A60.864 60.864 0 0 0 5.68 4.509l-.232-.867A1.875 1.875 0 0 0 3.636 2.25H2.25ZM3.75 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM16.5 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#gallery-section">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="nav-svg transition-transform transform hover:scale-125" viewBox="0 0 24 24">
+                                <path fill="none" stroke="currentColor" stroke-width="2" d="M1 1h18v18H1V1Zm4 18v4h18V5.97h-4M6 8a1 1 0 1 0 0-2a1 1 0 0 0 0 2ZM2 18l5-6l3 3l4-5l5 6"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- SVG Button to open/close the offcanvas -->
+                        <a href="#" id="toggleOffcanvas" class="transition-transform transform hover:scale-125">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="nav-svg transition-transform transform hover:scale-125" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" d="M4.804 21.644A6.707 6.707 0 0 0 6 21.75a6.721 6.721 0 0 0 3.583-1.029c.774.182 1.584.279 2.417.279 5.322 0 9.75-3.97 9.75-9 0-5.03-4.428-9-9.75-9s-9.75 3.97-9.75 9c0 2.409 1.025 4.587 2.674 6.192.232.226.277.428.254.543a3.73 3.73 0 0 1-.814 1.686.75.75 0 0 0 .44 1.223ZM8.25 10.875a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25ZM10.875 12a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875-1.125a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+                <div class="smnav flex justify-center">
+
+                </div>
+                <!---<h1 class="text-5xl text-black absolute font-thin">HOME</h1>--->
+                <ul>
+                    <li>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"  class="nav-svg transition-transform transform hover:scale-150">
+                                <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
+                                <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="nav-svg transition-transform transform hover:scale-150">
+                                <path fill-rule="evenodd" d="M5.25 9a6.75 6.75 0 0 1 13.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 0 1-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 1 1-7.48 0 24.585 24.585 0 0 1-4.831-1.244.75.75 0 0 1-.298-1.205A8.217 8.217 0 0 0 5.25 9.75V9Zm4.502 8.9a2.25 2.25 0 1 0 4.496 0 25.057 25.057 0 0 1-4.496 0Z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="toggleButton">
+                            <img src="images/95bc5c03cdfe495eeb05c3929313d2c5.jpg" alt="Avatar" class="nav-svg rounded-full">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</nav>
+
+<!--- nav --->
+
+<!--- header --->
+
+<section>
+    <header>
+        <div class="notched-rectangle bg-black relative w-full h-full flex items-center justify-center">
+            <div class="sticky-container" style="font-family: MyCustomFont, serif;">
+                <h1 class="font-h1" draggable="false">Frosty</h1>
+                <h2 class="font-h2" draggable="false">Fog</h2>
+            </div>
+        </div>
+        <div class="flex items-center justify-center h-full top-20">
+            <h1 class="neon-text whitespace-nowrap" style="font-family: MyCustomFont,serif">
+                <span class="block">frosty</span>
+                <span class="block">fog</span>
+            </h1>
+        </div>
+    </header>
+</section>
+
+<!--- header --->
+
+<!--- products --->
+
+<section>
+    <div class="min-h-screen flex flex-col md:flex-row">
+        <!-- Left Section -->
+        <div class="bg-leftside w-full md:w-1/2 lg:w-1/3 p-4 flex flex-col relative z-10 md:rounded-r-[4em] animate-fade-in-left min-h-screen md:min-h-0">
+            <!-- Hamburger Icon -->
+            <div class="md:hidden flex justify-end">
+                <button id="menu-button" class="text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Navigation Section -->
+            <nav id="menu" class="nav-menu hidden md:flex flex-col md:flex-row my-8 animate-fade-in-left whitespace-nowrap bg-black md:rounded-full py-2 px-4 md:space-x-4 justify-around">
+                <a href="#" class="nav-item text-white hover:text-gray-300 px-4 py-2">Lumo Dots</a>
+                <a href="#" class="nav-item text-white hover:text-gray-300 px-4 py-2">Neo Dots</a>
+                <a href="#" class="nav-item text-white hover:text-gray-300 px-4 py-2">Pastel Dots</a>
+                <a href="#" class="nav-item text-white hover:text-gray-300 px-4 py-2">Classic Dots</a>
+            </nav>
+
+            <!-- Additional Content -->
+            <div class="flex-grow">
+                <div class="sticky-container-2" style="font-family: MyCustomFont,serif">
+                    <h1 class="font-h11">FROSTY</h1>
+                    <h2 class="font-h22">LIGHTS</h2>
+                </div>
+            </div>
+            <div class="flex justify-center pb-20">
+                <button class="button-order">
+                <span>
+                    <span class="container-1 btn-order">
+                        <span class="primary-1"></span>
+                        <span class="complimentary"></span>
+                    </span>
+                </span>
+                    <span class="text-3xl">ORDER</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Right Section -->
+        <div class="bg-[#ECD1D6] bg-rideside right-bg w-full md:w-1/2 lg:w-2/3 flex-1 justify-center items-center md:rounded-l-[4em] relative z-20 animate-fade-in-right backdrop-blur-lg bg-opacity-70">
+            <div class="max-w-full flex flex-col md:flex-row justify-evenly md:gap-40 gap-10 mt-12 mb-9 px-4 md:px-10">
+                <h1 class="text-4xl md:text-7xl whitespace-nowrap border-b-2 border-black font-extralight" style="font-family: MyCustomFont,serif">All Lamps</h1>
+                <div class="flex items-center p-3 rounded-full">
+                    <div class="flex items-center ml-0 md:ml-5 space-x-3">
+                        <img src="images/95bc5c03cdfe495eeb05c3929313d2c5.jpg" alt="Avatar" class="w-10 h-10 rounded-full" loading="lazy">
+                        <span class="text-gray-700 font-semibold"></span>
+                    </div>
+                    <div class="searchbar-container bg-white rounded-full w-full md:w-3/4 lg:w-2/3 p-2 m-auto flex items-center relative">
+                        <input type="text" placeholder="Search lamps..." class="bg-transparent text-black w-full px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-black placeholder-gray-400" id="search-input">
+                        <button class="text-black px-4 py-2 rounded-full ml-2 focus:outline-none focus:ring-2 focus:ring-black">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m1.2-4.88a7.5 7.5 0 11-15 0 7.5 7.5 0 0115 0z" />
+                            </svg>
+                        </button>
+                        <div id="suggestions" class="absolute bg-white w-full mt-80 rounded-lg shadow-lg z-50 bg-rideside2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center p-8">
+                <div class="carousel-container"><!--- add it sm and lg here! --->
+                    <!-- Card 1 -->
+                    <div class="card bg-cover bg-center" style="background-image: url('images/2d4af159da8c60c87b5a085c3a95860e.jpg');" data-title="Major Update" data-content="Forthright and candid, this noble and admirable knight wanders the cosmos, resolutely following the Path of Beauty." data-price="10.99" data-image="images/2d4af159da8c60c87b5a085c3a95860e.jpg">
+                        <div class="icon-top-right">
+                            <svg xmlns="http://www.w3.org/2000/svg" onclick="openModal(this)" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-8 md:hover:scale-150 md:transition-transform cursor-pointer">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                            </svg>
+                        </div>
+                        <div class="icon-bottom-right z-50">
+                            <a href="#" class="add-to-cart show-notification">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="card-description">
+                            <div class="description-content">
+                                <h3>Serene Light $10.99</h3>
+                                <h1>Lunar Glow Lamp</h1>
+                                <p>Soft, warm light for a calm, elegant space.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="card bg-cover bg-center" style="background-image: url('images/51AEyNWAj0L._AC_SX679_.jpg');" data-title="New Arrival" data-content="Discover the latest addition to our collection with stunning designs and features." data-price="14.99" data-image="images/51AEyNWAj0L._AC_SX679_.jpg">
+                        <div class="icon-top-right">
+                            <svg xmlns="http://www.w3.org/2000/svg" onclick="openModal(this)" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-8 md:hover:scale-150 md:transition-transform cursor-pointer">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                            </svg>
+                        </div>
+                        <div class="icon-bottom-right z-50">
+                            <a href="#" class="add-to-cart show-notification">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="card-description">
+                            <div class="description-content">
+                                <h3>Elegant Illumination $14.99</h3>
+                                <h1>Mushroom Lamp</h1>
+                                <p>Modern design meets soft, ambient lighting.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="card bg-cover bg-center" style="background-image: url('images/9b27ec4d81f836f992c3fe5a3b51526b.jpg');" data-title="Special Offer" data-content="Enjoy special discounts on selected items for a limited time only." data-price="9.99" data-image="images/9b27ec4d81f836f992c3fe5a3b51526b.jpg">
+                        <div class="icon-top-right">
+                            <svg xmlns="http://www.w3.org/2000/svg" onclick="openModal(this)" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-8 md:hover:scale-150 md:transition-transform cursor-pointer">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                            </svg>
+                        </div>
+                        <div class="icon-bottom-right z-50">
+                            <a href="#" class="add-to-cart show-notification">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="card-description">
+                            <div class="description-content">
+                                <h3>Sweet Glow $9.99</h3>
+                                <h1>Strawberry Lamp</h1>
+                                <p>Fun, fruity lighting that adds a pop of color.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="card bg-cover bg-center" style="background-image: url('images/76972f96e13b2413594fa3ecef7c04ea.jpg');" data-title="Featured Product" data-content="Check out our featured product of the month with amazing benefits." data-price="12.99" data-image="images/76972f96e13b2413594fa3ecef7c04ea.jpg">
+                        <div class="icon-top-right">
+                            <svg xmlns="http://www.w3.org/2000/svg" onclick="openModal(this)" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-8 md:hover:scale-150 md:transition-transform cursor-pointer">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                            </svg>
+                        </div>
+                        <div class="icon-bottom-right z-50">
+                            <a href="#" class="add-to-cart show-notification">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="card-description">
+                            <div class="description-content">
+                                <h3>Blossom Radiance $12.99</h3>
+                                <h1>Floral Cube Lamp</h1>
+                                <p>An enchanting, flower-themed lamp that brings a warm, soothing glow to any space.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="card bg-cover bg-center" style="background-image: url('images/4aac85b6db4d80d2bd235431df124c03.jpg');" data-title="Limited Edition" data-content="Get your hands on our limited edition items before they're gone." data-price="19.99" data-image="images/4aac85b6db4d80d2bd235431df124c03.jpg">
+                        <div class="icon-top-right">
+                            <svg xmlns="http://www.w3.org/2000/svg" onclick="openModal(this)" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-8 md:hover:scale-150 md:transition-transform cursor-pointer">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                            </svg>
+                        </div>
+                        <div class="icon-bottom-right z-50">
+                            <a href="#" class="add-to-cart show-notification">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="card-description">
+                            <div class="description-content">
+                                <h3>Nature's Charm $19.99</h3>
+                                <h1>Bloom Floor Lamp</h1>
+                                <p>A stylish, nature-inspired floor lamp that brightens up your room with a touch of greenery.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--- products --->
+
+<!--- benefits --->
+
+<section class="pt-32">
+    <div class="parent-container">
+        <div class="smtag flex justify-center relative p-8 mx-96 w-full bg-[#BE2C8C]">
+            <h3 class="text-4xl font-semibold" style="font-family: MyCustomFont2,serif">BENEFITS</h3>
+        </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 p-4 pt-20">
+        <!-- Card 1: Shop Delivery -->
+        <div class="bg-[#F4D1E0] flex hover:scale-105 transform transition items-center justify-between p-6 rounded-lg shadow-md w-full md:w-1/3">
+            <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h18M5 3v12h14V3m-2 5H7m6 9h6v6H5v-6h6m6 0V3M5 3v14" />
+                </svg>
+                <div class="ml-4" style="font-family: MyCustomFont2,serif">
+                    <h2 class="text-2xl font-bold">Shop Delivery</h2>
+                    <p>Fast and reliable delivery within 2-3 days.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: Pricing -->
+        <div class="bg-[#F4D1E0] flex hover:scale-105 transform transition items-center justify-between p-6 rounded-lg shadow-md w-full md:w-1/3">
+            <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c.667-2.333 2-7 4-7s3.333 4.667 4 7-1.667 2.333-4 7c-2.333 4.667-2 7-4 7s-3.333-4.667-4-7 1.667-2.333 4-7zm0 0c.667-1.333 2-4 4-4s3.333 2.667 4 4m-8 0c-.667-1.333-2-4-4-4S3.667 2.667 3 4m8 0c-.667 1.333-2 4-4 4s-3.333-2.667-4-4" />
+                </svg>
+                <div class="ml-4" style="font-family: MyCustomFont2,serif">
+                    <h2 class="text-2xl font-bold">Best Pricing</h2>
+                    <p>Competitive prices starting from $9.99.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3: Customer Support -->
+        <div class="bg-[#F4D1E0] flex hover:scale-105 transform transition items-center justify-between p-6 rounded-lg shadow-md w-full md:w-1/3">
+            <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h10M7 16h7M5 21v-3.764C5 15.12 7.72 13 11 13s6 2.12 6 4.236V21m-6-8c-3.28 0-6-2.12-6-4.236V3h12v5.764C17 10.88 14.28 13 11 13z" />
+                </svg>
+                <div class="ml-4" style="font-family: MyCustomFont2,serif">
+                    <h2 class="text-2xl font-bold" style="font-family: MyCustomFont2,serif">Customer Support</h2>
+                    <p>24/7 support for all your needs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row justify-center items-start p-20 bg-black z-50">
+        <!-- Left Vertical NEWS Label -->
+        <div class="bg-[#F4D1E0] py-20 flex justify-center items-center z-50">
+            <div class="text-black font-semibold tracking-wide transform rotate-90" style="font-family: MyCustomFont2,serif">
+                <h3 class="text-2xl">ABOUT</h3>
+            </div>
+        </div>
+
+        <!-- Accordion Cards Container -->
+        <div class="flex flex-col w-full">
+            <!-- Accordion Item 1 -->
+            <details class="accordion-item bg-black text-white">
+                <summary class="flex justify-between items-center cursor-pointer p-4 border-b border-[#BE2C8C]" style="font-family: MyCustomFont3,serif">
+                    <div>
+                        <span class="block text-xs text-gray-400">2024.08.25</span>
+                        <span class="block text-base font-bold">New Collection of Modern Lamps Arrived!</span>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 accordion-arrow" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </summary>
+                <div class="px-4 py-2">
+                    <p>Check out our latest arrivals of modern and stylish lamps, perfect for any home decor. Visit our shop to explore the new collection and find the perfect lighting solution for your space!</p>
+                </div>
+            </details>
+
+            <!-- Accordion Item 2 -->
+            <details class="accordion-item bg-black text-white">
+                <summary class="flex justify-between items-center cursor-pointer p-4 border-b border-[#BE2C8C]" style="font-family: MyCustomFont3,serif">
+                    <div>
+                        <span class="block text-xs text-gray-400">2024.07.10</span>
+                        <span class="block text-base font-bold">Summer Sale: Up to 30% Off on Selected Lamps</span>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 accordion-arrow" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </summary>
+                <div class="px-4 py-2">
+                    <p>Don’t miss out on our summer sale! Get up to 30% off on selected lamps. Shop now to brighten up your home at a great price.</p>
+                </div>
+            </details>
+
+            <!-- Accordion Item 3 -->
+            <details class="accordion-item bg-black text-white">
+                <summary class="flex justify-between items-center cursor-pointer p-4 border-b border-[#BE2C8C]" style="font-family: MyCustomFont3,serif">
+                    <div>
+                        <span class="block text-xs text-gray-400">2024.06.15</span>
+                        <span class="block text-base font-bold">Grand Opening of Our New Lamp Store</span>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 accordion-arrow" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </summary>
+                <div class="px-4 py-2">
+                    <p>We are excited to announce the grand opening of our new lamp store! Join us for exclusive discounts and special offers on a wide range of lighting options.</p>
+                </div>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!--- benefits --->
+
+<!--- information --->
+
+<section class="pt-28">
+    <div class="max-w-7xl mx-auto p-12 rounded-lg flex flex-col md:flex-row items-center md:items-start space-y-10 md:space-y-0 md:space-x-10">
+
+        <!-- Lamp Image Section -->
+        <div class="w-full md:w-2/3 lg:w-1/2 bg-grad">
+            <img src="images/PRE-ORDER-Andon-Snow-Cave-Tripod-Lamp-Japan-Best_net-3.png" alt="Lamp" class="rounded-lg w-full" loading="lazy" draggable="false">
+        </div>
+
+        <!-- Information Section -->
+        <div class="w-full md:w-2/3 lg:w-1/2 text-center md:text-left" style="font-family: MyCustomFont2,serif">
+            <h1 style="font-family: MyCustomFont,serif" class="text-4xl md:text-6xl font-bold mb-8 text-[#F4D1E0] text-nowrap">Best Lamp in Town</h1>
+            <p class="text-xl md:text-2xl text-[#BE2C8C] mb-6">
+                Discover our exclusive range of stylish and modern lamps, perfect for any room. Whether you're looking for a minimalist design to complement your living room or a statement piece to brighten up your workspace, we've got you covered.
+            </p>
+            <p class="text-lg md:text-xl text-white mb-6">
+                Our lamps are crafted with the highest quality materials, ensuring not just illumination, but also a touch of elegance to any space. From sleek contemporary designs to vintage-inspired models, our collection caters to diverse tastes and preferences.
+            </p>
+            <p class="text-lg md:text-xl text-[#BE2C8C] mb-10">
+                In addition to style, we prioritize functionality. Our lamps come with various features such as adjustable brightness, energy-efficient LEDs, and more. Illuminate your world with a lamp that’s not just a light source, but a centerpiece of design.
+            </p>
+            <a href="#_" class="relative inline-flex items-center justify-center px-10 py-5 overflow-hidden font-bold text-white rounded-md shadow-2xl group">
+                <span class="absolute inset-0 w-full h-full transition duration-300 ease-out opacity-0 bg-gradient-to-br from-pink-600 via-purple-700 to-blue-400 group-hover:opacity-100"></span>
+                <!-- Top glass gradient -->
+                <span class="absolute top-0 left-0 w-full bg-gradient-to-b from-white to-transparent opacity-5 h-1/3"></span>
+                <!-- Bottom gradient -->
+                <span class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-white to-transparent opacity-5"></span>
+                <!-- Left gradient -->
+                <span class="absolute bottom-0 left-0 w-4 h-full bg-gradient-to-r from-white to-transparent opacity-5"></span>
+                <!-- Right gradient -->
+                <span class="absolute bottom-0 right-0 w-4 h-full bg-gradient-to-l from-white to-transparent opacity-5"></span>
+                <span class="absolute inset-0 w-full h-full border border-white rounded-md opacity-10"></span>
+                <span class="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-56 group-hover:h-56 opacity-5"></span>
+                <span class="relative">Shop Now &rarr;</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!--- information --->
+
+<!--- gallery --->
+
+<section id="gallery-section" class="bg-black w-full flex justify-center items-center p-10">
+    <div class="grid grid-cols-2 gap-4">
+        <!-- Card 1: Top left rectangle -->
+        <div class="bg-green-600 h-48 w-40 sm:h-96 sm:w-72 rounded-tr-[30%] rounded-bl-[30%] card-1"></div>
+
+        <!-- Card 2: Top right rectangle -->
+        <div class="bg-yellow-300 h-48 w-40 sm:h-96 sm:w-72 rounded-tl-[30%] card-2"></div>
+
+        <!-- Card 3: Bottom left square -->
+        <div class="bg-blue-400 h-40 w-40 sm:h-64 sm:w-72 rounded-bl-[50%] rounded-tl-[50%] rounded-br-[50%] card-3"></div>
+
+        <!-- Card 4: Bottom right circle -->
+        <div class="bg-black h-40 w-40 sm:h-64 sm:w-72 rounded-bl-[30%] card-4"></div>
+    </div>
+</section>
+
+<!--- gallery --->
+
+<!--- footer --->
+
+<section class="">
+    <footer class="text-white py-8">
+        <div class="container mx-auto px-4 md:flex md:justify-between">
+            <!-- Left Section -->
+            <div class="mb-8 md:mb-0">
+                <h2 class="text-3xl font-bold" style="font-family: MyCustomFont,serif">Frosty <span class="block">Lights.</span></h2>
+
+                <!-- Divider -->
+                <hr class="border-gray-700 my-6">
+
+                <div class="flex space-x-4 mt-6">
+                    <a href="https://github.com/frosty-fog" target="_blank" class="hover:opacity-75 transition-opacity">
+                        <img src="https://img.icons8.com/ios-glyphs/30/ffffff/github.png" alt="GitHub" class="h-8" loading="lazy">
+                    </a>
+                    <a href="https://t.me/frostyfog" target="_blank" class="hover:opacity-75 transition-opacity">
+                        <img src="https://img.icons8.com/ios-glyphs/30/ffffff/telegram-app.png" alt="Telegram" class="h-8" loading="lazy">
+                    </a>
+                    <a href="https://www.instagram.com/_frostyfog/" target="_blank" class="hover:opacity-75 transition-opacity">
+                        <img src="https://img.icons8.com/ios-glyphs/30/ffffff/instagram-new.png" alt="Instagram" class="h-8" loading="lazy">
+                    </a>
+                </div>
+
+                <!-- Divider -->
+                <hr class="border-gray-700 my-6">
+
+                <nav class="mt-6" style="font-family: MyCustomFont2,serif">
+                    <ul>
+                        <li class="mb-2"><a href="#" class="hover:underline">Home</a></li>
+                        <li class="mb-2"><a href="#" class="hover:underline">Profile</a></li>
+                        <li class="mb-2"><a href="#." class="hover:underline">About Us</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Divider -->
+                <hr class="border-gray-700 my-6">
+
+                <div class="mt-6">
+                    <a href="#" class="inline-block px-6 py-2 border border-white hover:bg-white hover:text-black transition-colors rounded" style="font-family: MyCustomFont2,serif">SHOP &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Right Section -->
+            <div class="p-4">
+                <h3 class="text-2xl font-semibold mb-4" style="font-family: MyCustomFont,serif">Send an email!</h3>
+
+                <!-- Divider -->
+                <hr class="border-gray-700 my-6">
+
+                <form class="space-y-4" action="/send-email" method="POST">
+                    <div class="space-y-4 sm:space-y-0 sm:flex sm:space-x-4">
+                        <input type="text" name="firstName" placeholder="First Name" class="w-full sm:w-1/2 px-4 py-2 bg-gray-800 border border-gray-700 focus:outline-none rounded">
+                        <input type="text" name="lastName" placeholder="Last Name" class="w-full sm:w-1/2 px-4 py-2 bg-gray-800 border border-gray-700 focus:outline-none rounded">
+                    </div>
+                    <input type="email" name="email" placeholder="Email Address" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 focus:outline-none rounded">
+                    <textarea name="message" placeholder="Let us know how we can help..." class="w-full px-4 py-2 bg-gray-800 border border-gray-700 focus:outline-none rounded"></textarea>
+                    <button type="submit" class="w-full px-4 py-2 border border-white hover:bg-white hover:text-black transition-colors rounded">SUBMIT</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Divider -->
+
+        <div class="container mx-auto px-4 mt-8">
+            <div class="border-t border-gray-700 pt-4 text-center md:flex md:justify-between">
+                <p>© 2024 FrostyFog</p>
+                <div class="mt-4 md:mt-0">
+                    <a href="tel:+16121234567" class="hover:underline">+44 7398-616-172</a> |
+                    <a href="mailto:frostyfog004@gmail.com" class="hover:underline">frostyfog004@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>
+
+<!--- footer --->
+
+<!-- Modal -->
+
+<div id="modal" class="fixed inset-0 flex justify-center items-center hidden z-50">
+    <div class="modal-overlay absolute inset-0 bg-black bg-modal bg-opacity-60" onclick="closeModal()"></div>
+    <div id="modal-content" class="relative bg-black text-gray-200 max-w-[80%] w-full mx-4 md:mx-0 transform scale-95 opacity-0 transition-transform transition-opacity duration-300 ease-out max-h-full overflow-auto rounded-lg">
+        <div class="flex justify-between items-center p-4 border-b border-gray-700">
+            <h2 id="modal-title" class="text-xl font-bold">Lamp Selection</h2>
+            <button onclick="closeModal()" class="sca">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div id="modal-body" class="p-6">
+            <!-- Unique content will be injected here -->
+            <div class="border-[1px] border-r-transparent border-l-transparent border-white p-4 md:px-10 md:py-12 flex flex-col md:flex-row justify-between relative rounded-3xl">
+                <div class="relative md:w-1/2 mb-4 md:mb-0 notched-rectangle-3">
+                    <img id="modal-image" src="" alt="Modal Image" class="w-full h-64 md:h-96 object-cover" loading="lazy">
+                </div>
+                <div class="md:w-1/2 md:ml-6">
+                    <p class="text-gray-300 mb-4">Select your favorite lamp from our collection. Customize by choosing the color and size that fits your space.</p>
+                    <div>
+                        <!-- Color Selection Bar -->
+                        <h3 class="text-lg font-semibold mb-2">Select Lamp Color:</h3>
+                        <div class="flex items-center space-x-2 overflow-auto custom-scrollbar">
+                            <button class="color-option w-8 h-8 rounded border-2 border-transparent hover:border-gray-400 focus:outline-none" style="background-color: #ffd7a1;" data-color="CREAM / 001" onclick="selectColor(this)"></button>
+                            <button class="color-option w-8 h-8 rounded border-2 border-transparent hover:border-gray-400 focus:outline-none" style="background-color: #ffb64d;" data-color="ORANGE / 002" onclick="selectColor(this)"></button>
+                            <button class="color-option w-8 h-8 rounded border-2 border-transparent hover:border-gray-400 focus:outline-none" style="background-color: #fca5a5;" data-color="PINK / 003" onclick="selectColor(this)"></button>
+                            <button class="color-option w-8 h-8 rounded border-2 border-transparent hover:border-gray-400 focus:outline-none" style="background-color: #ff6767;" data-color="PINK-2 / 004" onclick="selectColor(this)"></button>
+                        </div>
+                        <div class="mt-2 text-sm text-gray-300">
+                            <span id="selected-color-label">COLOR: GOLD / 001</span>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <!-- Size Selection Bar -->
+                        <h3 class="text-lg font-semibold mb-2">Select Lamp Size:</h3>
+                        <div class="flex items-center space-x-2 overflow-auto custom-scrollbar">
+                            <button class="size-option px-3 py-1 border-2 border-gray-300 rounded hover:border-gray-400 focus:outline-none" data-size="Small" onclick="selectSize(this)">Small</button>
+                            <button class="size-option px-3 py-1 border-2 border-gray-300 rounded hover:border-gray-400 focus:outline-none" data-size="Medium" onclick="selectSize(this)">Medium</button>
+                            <button class="size-option px-3 py-1 border-2 border-gray-300 rounded hover:border-gray-400 focus:outline-none" data-size="Large" onclick="selectSize(this)">Large</button>
+                            <button class="size-option px-3 py-1 border-2 border-gray-300 rounded hover:border-gray-400 focus:outline-none" data-size="X-Large" onclick="selectSize(this)">X-Large</button>
+                        </div>
+                        <div class="mt-2 text-sm text-gray-300">
+                            <span id="selected-size-label">SIZE: Small</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-end pb-5 pr-4 gap-6">
+            <a href="#_" onclick="closeModal()"  class="relative px-8 md:px-20 py-2 my-2 font-bold text-black group">
+                <span class="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 bg-red-300 group-hover:translate-x-0 tracking-tighter group-hover:translate-y-0"></span>
+                <span class="absolute inset-0 w-full h-full border-4 border-black"></span>
+                <span class="relative">Close</span>
+            </a>
+            <a href="#_" onclick="closeModal()" class="relative px-8 md:px-20 py-2 my-2 font-bold text-black group">
+                <span class="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 bg-[#FFB64D] group-hover:translate-x-0 tracking-tighter group-hover:translate-y-0"></span>
+                <span class="absolute inset-0 w-full h-full border-4 border-black"></span>
+                <span class="relative">Confirm</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+
+<!-- Image Modal -->
+
+<div id="image-modal" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md flex items-center justify-center hidden z-50">
+    <div id="modal-content" class="relative max-w-full w-[90%] h-[90%] p-4 bg-transparent overflow-hidden">
+        <img id="large-image" src="image1.jpg" alt="Large Image" class="object-contain w-full h-full transition-transform duration-300 ease-in-out" loading="lazy"/>
+        <button id="close-button" class="absolute top-4 right-4 text-white text-3xl">&times;</button>
+
+        <!-- Navigation Buttons -->
+        <button id="prev-button" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full text-white">
+            &#10094;
+        </button>
+        <button id="next-button" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full text-white">
+            &#10095;
+        </button>
+    </div>
+</div>
+
+<!-- Image Modal -->
+
+<!-- dashboard -->
+
+<div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-[998]"></div>
+<div id="scrollContainer" class="fixed bottom-0 w-full h-50vh z-[999] scroll-container shadow-lg overflow-y-auto">
+    <div class="handle mt-4"></div>
+    <div>
+        <!-- Content here -->
+        <div class="flex justify-center">
+            <img src="images/95bc5c03cdfe495eeb05c3929313d2c5.jpg" class="rounded-full h-36 w-36 mb-[-5em]" loading="lazy" style="box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;" alt="">
+            <div>
+                <!-- Additional Content Here -->
+            </div>
+        </div>
+        <div class="h-52 bg-scroller rounded-t-3xl shadow-lg bg-scroll"></div>
+        <div class="h-full bg-black">
+            <!-- Dashboard Content -->
+            <div class="px-4 pt-10">
+                <!-- Product Stats -->
+                <div class="bg-gray-100 rounded-lg p-4 shadow-md mb-6">
+                    <h2 class="text-xl font-semibold text-gray-700">purchase Stats</h2>
+                    <div class="grid grid-cols-2 gap-4 mt-4">
+                        <div class="text-center">
+                            <p class="text-gray-500">Total Items Buyed</p>
+                            <p class="text-2xl font-bold text-gray-700">$12,000</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-gray-500">Lamps Buyed</p>
+                            <p class="text-2xl font-bold text-gray-700">120</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Products -->
+            <div class="bg-gray-100 rounded-lg m-4 p-4 shadow-md mb-6">
+                <h2 class="text-xl font-semibold text-gray-700">Recent Products</h2>
+                <div class="mt-4 space-y-4">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center">
+                            <img src="images/befee6653833ac60ea385dd378dede7e.jpg" class="h-12 w-12 rounded-full shadow-md" alt="Lamp Image" loading="lazy">
+                            <p class="ml-4 text-gray-700">Modern Lamp A</p>
+                        </div>
+                        <p class="text-gray-500">$120</p>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center">
+                            <img src="images/9b27ec4d81f836f992c3fe5a3b51526b.jpg" class="h-12 w-12 rounded-full shadow-md" alt="Lamp Image" loading="lazy">
+                            <p class="ml-4 text-gray-700">Modern Lamp B</p>
+                        </div>
+                        <p class="text-gray-500">$80</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion m-4">
+                <div class="accordion-item border-t border-b border-gray-200">
+                    <h2 class="accordion-header mb-0">
+                        <button class="accordion-button flex justify-between items-center w-full py-4 px-5 text-base text-gray-800 bg-white border-0 transition focus:outline-none hover:bg-gray-50" data-accordion-target="#collapseOne">
+                            Account Information
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transition-transform transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse hidden">
+                        <div class="accordion-body py-4 px-5 bg-gray-50 rounded-b-lg shadow-sm">
+                            <form class="space-y-6">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="firstName" class="block text-sm font-medium text-gray-700">First Name</label>
+                                        <input type="text" id="firstName" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="John">
+                                    </div>
+                                    <div>
+                                        <label for="lastName" class="block text-sm font-medium text-gray-700">Last Name</label>
+                                        <input type="text" id="lastName" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Doe">
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                                        <input type="email" id="email" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="john.doe@example.com">
+                                    </div>
+                                    <div>
+                                        <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                                        <input type="tel" id="phone" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="+1 234 567 890">
+                                    </div>
+                                </div>
+                                <button type="submit" class="w-full py-3 text-white text-lg font-semibold rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300 ease-in-out shadow-md">
+                                    Save Changes
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item border-t border-b border-gray-200 mt-2">
+                    <h2 class="accordion-header mb-0">
+                        <button class="accordion-button flex justify-between items-center w-full py-4 px-5 text-base text-gray-800 bg-white border-0 transition focus:outline-none hover:bg-gray-50" data-accordion-target="#collapseTwo">
+                            Privacy Settings
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transition-transform transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse hidden">
+                        <div class="accordion-body py-4 px-5 bg-gray-50 rounded-b-lg shadow-sm">
+                            <form class="space-y-6">
+                                <div class="flex items-center">
+                                    <input id="profileVisibility" name="profileVisibility" type="checkbox" class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                                    <label for="profileVisibility" class="ml-3 block text-sm font-medium text-gray-700">
+                                        Make my profile visible to others
+                                    </label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="emailNotifications" name="emailNotifications" type="checkbox" class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                                    <label for="emailNotifications" class="ml-3 block text-sm font-medium text-gray-700">
+                                        Receive email notifications
+                                    </label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="smsAlerts" name="smsAlerts" type="checkbox" class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                                    <label for="smsAlerts" class="ml-3 block text-sm font-medium text-gray-700">
+                                        Receive SMS alerts
+                                    </label>
+                                </div>
+                                <button type="submit" class="w-full py-3 text-white text-lg font-semibold rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300 ease-in-out shadow-md">
+                                    Update Settings
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item border-t border-b border-gray-200 mt-2">
+                    <h2 class="accordion-header mb-0">
+                        <button class="accordion-button flex justify-between items-center w-full py-4 px-5 text-base text-gray-800 bg-white border-0 transition focus:outline-none hover:bg-gray-50" data-accordion-target="#collapseThree">
+                            Payment Information
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transition-transform transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse hidden">
+                        <div class="accordion-body py-4 px-5 bg-gray-50">
+                            <svg display="none">
+                                <symbol id="modern-card" viewBox="0 0 16 16">
+                                    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+                                        <line x1="1" y1="7" x2="15" y2="7" />
+                                        <polygon points="1 3,15 3,15 13,1 13" />
+                                    </g>
+                                </symbol>
+                                <symbol id="modern-plus" viewBox="0 0 16 16">
+                                    <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                        <line x1="8" y1="2" x2="8" y2="14" />
+                                        <line x1="2" y1="8" x2="14" y2="8" />
+                                    </g>
+                                </symbol>
+                            </svg>
+
+                            <form onsubmit="return false" class="bg-gray-50 p-8 max-w-lg mx-auto shadow-md rounded-xl">
+                                <div class="flex justify-between items-center mb-6">
+                                    <h3 class="text-xl font-semibold text-gray-900">Delivery Method</h3>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+                                    <label class="relative border border-gray-200 rounded-lg p-5 cursor-pointer hover:bg-gray-100 transition duration-300 ease-in-out shadow-sm">
+                                        <input class="absolute top-4 right-4 w-4 h-4 peer" type="radio" name="delivery"
+                                               value="standard" aria-labelledby="delivery-0-name"
+                                               aria-describedby="delivery-0-shipping delivery-0-price" checked>
+                                        <span class="block">
+        <span id="delivery-0-name" class="text-lg font-medium text-gray-800">Standard</span>
+        <small id="delivery-0-shipping" class="block text-gray-500 mt-1">5–10 business days</small>
+      </span>
+                                        <strong id="delivery-0-price" class="block mt-3 text-gray-900">$5.00</strong>
+                                        <div class="absolute inset-0 border-2 rounded-lg border-transparent peer-checked:border-blue-500"></div>
+                                    </label>
+                                    <label class="relative border border-gray-200 rounded-lg p-5 cursor-pointer hover:bg-gray-100 transition duration-300 ease-in-out shadow-sm">
+                                        <input class="absolute top-4 right-4 w-4 h-4 peer" type="radio" name="delivery"
+                                               value="fast" aria-labelledby="delivery-1-name"
+                                               aria-describedby="delivery-1-shipping delivery-1-price">
+                                        <span class="block">
+        <span id="delivery-1-name" class="text-lg font-medium text-gray-800">Fast</span>
+        <small id="delivery-1-shipping" class="block text-gray-500 mt-1">2–4 business days</small>
+      </span>
+                                        <strong id="delivery-1-price" class="block mt-3 text-gray-900">$15.00</strong>
+                                        <div class="absolute inset-0 border-2 rounded-lg border-transparent peer-checked:border-blue-500"></div>
+                                    </label>
+                                    <label class="relative border border-gray-200 rounded-lg p-5 cursor-pointer hover:bg-gray-100 transition duration-300 ease-in-out shadow-sm">
+                                        <input class="absolute top-4 right-4 w-4 h-4 peer" type="radio" name="delivery"
+                                               value="express" aria-labelledby="delivery-2-name"
+                                               aria-describedby="delivery-2-shipping delivery-2-price">
+                                        <span class="block">
+        <span id="delivery-2-name" class="text-lg font-medium text-gray-800">Express</span>
+        <small id="delivery-2-shipping" class="block text-gray-500 mt-1">1 business day</small>
+      </span>
+                                        <strong id="delivery-2-price" class="block mt-3 text-gray-900">$25.00</strong>
+                                        <div class="absolute inset-0 border-2 rounded-lg border-transparent peer-checked:border-blue-500"></div>
+                                    </label>
+                                </div>
+                                <div class="flex justify-between items-center mb-6">
+                                    <h3 class="text-xl font-semibold text-gray-900">Payment Method</h3>
+                                    <button class="flex items-center bg-blue-50 border border-blue-200 rounded-full px-4 py-2 text-sm text-blue-600 hover:bg-blue-100 transition duration-300 ease-in-out shadow-sm">
+                                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor">
+                                            <use href="#modern-plus"/>
+                                        </svg>
+                                        Add New Card
+                                    </button>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                                    <label class="relative border border-gray-200 rounded-lg p-5 cursor-pointer hover:bg-gray-100 transition duration-300 ease-in-out shadow-sm">
+                                        <input class="absolute top-4 right-4 w-4 h-4 peer" type="radio" name="payment"
+                                               value="1234" aria-label="Card ending with 1234"
+                                               aria-describedby="payment-0-desc" checked>
+                                        <svg class="w-6 h-6 mb-3 text-gray-600">
+                                            <use href="#modern-card"/>
+                                        </svg>
+                                        <span class="block">
+        <span class="text-lg font-medium text-gray-800">**** **** **** 1234</span>
+        <small id="payment-0-desc" class="block text-gray-500 mt-1">Last used: <time datetime="2024-01-01">January 1, 2024</time></small>
+      </span>
+                                        <div class="absolute inset-0 border-2 rounded-lg border-transparent peer-checked:border-blue-500"></div>
+                                    </label>
+                                    <label class="relative border border-gray-200 rounded-lg p-5 cursor-pointer hover:bg-gray-100 transition duration-300 ease-in-out shadow-sm">
+                                        <input class="absolute top-4 right-4 w-4 h-4 peer" type="radio" name="payment"
+                                               value="4567" aria-label="Card ending with 5678"
+                                               aria-describedby="payment-1-desc">
+                                        <svg class="w-6 h-6 mb-3 text-gray-600">
+                                            <use href="#modern-card"/>
+                                        </svg>
+                                        <span class="block">
+        <span class="text-lg font-medium text-gray-800">**** **** **** 5678</span>
+        <small id="payment-1-desc" class="block text-gray-500 mt-1">Never used</small>
+      </span>
+                                        <div class="absolute inset-0 border-2 rounded-lg border-transparent peer-checked:border-blue-500"></div>
+                                    </label>
+                                </div>
+                                <button class="w-full py-3 text-white text-lg font-semibold rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300 ease-in-out shadow-md">
+                                    Place Your Order
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <button id="toggleButton">Toggle Container</button>
+
+    <!-- dashboard -->
+
+    <!-- pop-confirm -->
+
+    <div class="flex justify-center">
+        <!-- Hidden pop-confirm notification -->
+        <div id="pop-notification-container" class="fixed bottom-1 bg-black text-white mb-2 px-4 py-3 rounded-lg flex items-center space-x-3 shadow-lg z-50 hidden transition-all duration-500 transform opacity-0">
+            <img id="pop-notification-image" src="https://via.placeholder.com/40" alt="Profile" class="w-10 h-10 rounded-lg" loading="lazy">
+            <div class="text-sm">
+                <p>Added to <strong>card</strong></p>
+            </div>
+            <button class="bg-gray-700 text-white text-xs px-3 py-1 rounded hover:bg-gray-600 focus:outline-none" id="hide-notification">
+                Undo
+            </button>
+        </div>
+
+        <!-- pop-confirm -->
+
+
+        <!-- Offcanvas -->
+
+        <div id="offcanvas" class="fixed bottom-0 inset-x-0 bg-rideside2 rounded-t-2xl shadow-lg transform translate-y-full transition-transform duration-300 ease-in-out max-h-full overflow-y-auto z-50">
+            <div class="p-4 border-b border-gray-200 flex justify-between items-center">
+                <h2 class="text-xl font-semibold">Comments</h2>
+                <button id="closeOffcanvas" class="text-black hover:text-gray-700">&times;</button>
+            </div>
+            <div class="p-4 space-y-6">
+                <!-- Comment Form -->
+                <div>
+                    <textarea id="commentInput" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" rows="3" placeholder="Write your comment..."></textarea>
+                    <a href="#_" id="submitComment" class="relative inline-block px-4 py-2 font-medium group">
+                        <span class="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                        <span class="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
+                        <span class="relative text-black group-hover:text-white">Submit</span>
+                    </a>
+                </div>
+
+                <!-- Comments List -->
+                <div id="commentsList" class="space-y-4">
+                    <!-- Example Comment -->
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0">
+                            <img src="https://via.placeholder.com/40" alt="User Avatar" class="w-10 h-10 rounded-full" loading="lazy">
+                        </div>
+                        <div>
+                            <div class="bg-gray-100 p-3 rounded-lg shadow-sm">
+                                <h4 class="font-semibold">Frosty Fog</h4>
+                                <p class="text-gray-700">so in here you can see your past comments my friend!&nbsp;make sure to share your opinion with us.</p>
+                            </div>
+                            <div class="text-sm text-gray-800 mt-1">Just now</div>
+                        </div>
+                    </div>
+                    <!-- New comments will be appended here -->
+                </div>
+            </div>
+        </div>
+        <!-- Offcanvas -->
+
+        <!-- card page -->
+
+        <!-- Shopping Cart Offcanvas -->
+        <div id="cartOffcanvas" class="fixed bottom-0 inset-x-0 bg-rideside2 rounded-t-2xl shadow-lg transform translate-y-full transition-transform duration-300 ease-in-out max-h-full overflow-y-auto z-50">
+            <div class="p-4 border-b border-gray-200 flex justify-between items-center">
+                <h2 class="text-xl font-semibold">Shopping Cart</h2>
+                <button class="close-cart text-gray-500 hover:text-gray-700">&times;</button>
+            </div>
+
+            <!-- Scrollable Product List -->
+            <div class="p-4 space-y-6 max-h-64 overflow-y-auto custom-scrollbar">
+                <!-- Product List -->
+                <div class="product-list space-y-4">
+                    <!-- Product items will be added here dynamically -->
+                </div>
+            </div>
+
+            <!-- Total and Actions -->
+            <div class="p-4 space-y-4">
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-700 font-semibold">Total</span>
+                    <span class="total-price text-xl font-bold text-gray-900">$0.00</span>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#_" class="cancel-cart flex-1 relative inline-block px-4 py-2 font-medium group">
+                        <span class="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                        <span class="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
+                        <span class="relative text-black group-hover:text-white flex justify-center font-bold">Cancel</span>
+                    </a>
+                    <a href="#_" class="confirm-cart flex-1 relative inline-block px-4 py-2 font-medium group">
+                        <span class="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                        <span class="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
+                        <span class="relative text-black group-hover:text-white flex justify-center font-bold">Checkout</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Shopping Cart Offcanvas -->
+
+        <!-- Startup screen -->
+
+        <div id="startup-screen" class="fixed inset-0 flex items-center justify-center bg-black z-50">
+            <img src="images/logo3.png" alt="Logo" class="w-32 h-32 mb-4"> <!-- Adjust size if needed -->
+            <div class="absolute bottom-5 text-center text-gray-500 text-2xl">
+                By <span class="text-[#BEF9FF]" style="font-family: MyCustomFont,serif">FrostyFog</span>
+            </div>
+        </div>
+
+        <!-- Startup screen -->
+
+
+        <script async>
+    // JavaScript to make it a slideshow
+    const container = document.querySelector('.carousel-container');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    let interval;
+
+    container.addEventListener('mousedown', (e) => {
+        isDown = true;
+        container.classList.add('active');
+        startX = e.pageX - container.offsetLeft;
+        scrollLeft = container.scrollLeft;
+    });
+
+    container.addEventListener('mouseleave', () => {
+        isDown = false;
+        container.classList.remove('active');
+    });
+
+    container.addEventListener('mouseup', () => {
+        isDown = false;
+        container.classList.remove('active');
+    });
+
+    container.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - container.offsetLeft;
+        const walk = (x - startX) * 3; // scroll-fast
+        container.scrollLeft = scrollLeft - walk;
+    });
+
+    // Function to start the automatic slide show
+    function startSlideshow() {
+        const cards = document.querySelectorAll('.card');
+        const cardCount = cards.length;
+        const cardWidth = cards[0].offsetWidth + 32; // Adjust for card margin
+        let index = 0;
+
+        interval = setInterval(() => {
+            if (index < cardCount - 1) {
+                container.scrollLeft += cardWidth;
+                index++;
+            } else {
+                container.scrollLeft = 0; // Reset to the first card
+                index = 0;
+            }
+        }, 5000);
+    }
+
+    // Stop the slideshow
+    function stopSlideshow() {
+        clearInterval(interval);
+    }
+
+    // Start the slideshow on page load
+    startSlideshow();
+
+    // Add hover event listeners to the cards to stop/restart the slideshow
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', stopSlideshow);
+        card.addEventListener('mouseleave', startSlideshow);
+    });
+
+    function openModal(element) {
+        const modal = document.getElementById('modal');
+        const modalContent = document.getElementById('modal-content');
+        const modalTitle = document.getElementById('modal-title');
+        const modalBody = document.getElementById('modal-body');
+        const modalImage = document.getElementById('modal-image');
+        const nav = document.querySelector('nav');
+
+        const card = element.closest('.card');
+        const title = card.getAttribute('data-title');
+        const content = card.getAttribute('data-content');
+        const image = card.getAttribute('data-image');
+
+        modalTitle.textContent = title;
+        modalBody.querySelector('p').textContent = content;
+        modalImage.src = image;
+
+        modal.classList.remove('hidden');
+        nav.classList.add('hidden-nav'); // Hide the navigation bar
+
+        setTimeout(() => {
+            modalContent.classList.add('modal-enter-active');
+        }, 10);
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('modal');
+        const modalContent = document.getElementById('modal-content');
+        const nav = document.querySelector('nav');
+
+        modalContent.classList.remove('modal-enter-active');
+        modalContent.classList.add('modal-leave-active');
+
+        modalContent.addEventListener('transitionend', () => {
+            modal.classList.add('hidden');
+            modalContent.classList.remove('modal-leave-active');
+            nav.classList.remove('hidden-nav'); // Show the navigation bar
+        }, { once: true });
+    }
+
+    function selectColor(element) {
+        document.querySelectorAll('.color-option').forEach(option => {
+            option.classList.remove('border-white');
+        });
+        element.classList.add('border-white');
+        const selectedColor = element.getAttribute('data-color');
+        document.getElementById('selected-color-label').textContent = 'COLOR: ' + selectedColor;
+        console.log('Selected color:', selectedColor);
+    }
+
+    function selectSize(element) {
+        document.querySelectorAll('.size-option').forEach(option => {
+            option.classList.remove('border-black');
+            option.classList.add('border-gray-300');
+        });
+        element.classList.remove('border-gray-300');
+        element.classList.add('border-black');
+        const selectedSize = element.getAttribute('data-size');
+        document.getElementById('selected-size-label').textContent = 'SIZE: ' + selectedSize;
+        console.log('Selected size:', selectedSize);
+    }
+
+
+
+
+    // loading startup //
+
+    window.addEventListener('load', function() {
+        // Select the nav element using the new class
+        const navElement = document.querySelector('.hidden-on-startup');
+
+        // Prevent scrolling on startup
+        document.body.style.overflow = 'hidden';
+
+        // Initially hide the nav element by keeping the class
+        navElement.classList.add('hidden');
+
+        // Show the nav after 2 seconds by toggling the classes
+        setTimeout(function() {
+            navElement.classList.remove('hidden');
+            navElement.classList.add('visible');
+        }, 3000); // 2000 milliseconds = 2 seconds
+
+        // Re-enable scrolling after 3 seconds
+        setTimeout(function() {
+            document.body.style.overflow = ''; // Re-enable scrolling
+        }, 3000); // 3000 milliseconds = 3 seconds
+
+        // Hide the startup screen and show the main content after 5 seconds
+        setTimeout(function() {
+            document.getElementById('startup-screen').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+        }, 3000); // 5000 milliseconds = 5 seconds
+    });
+
+
+    // loading startup //
+
+
+
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const products = [
+            "Lamp Shade",
+            "Desk Lamp",
+            "Floor Lamp",
+            "Ceiling Lamp",
+            "Table Lamp",
+            "Wall Lamp",
+            "Outdoor Lamp"
+        ];
+
+        const searchInput = document.getElementById("search-input");
+        const suggestionsContainer = document.getElementById("suggestions");
+
+        searchInput.addEventListener("input", () => {
+            const query = searchInput.value.toLowerCase();
+            suggestionsContainer.innerHTML = "";
+
+            if (query) {
+                const filteredProducts = products.filter(product =>
+                    product.toLowerCase().includes(query)
+                );
+
+                filteredProducts.forEach(product => {
+                    const suggestionItem = document.createElement("div");
+                    suggestionItem.classList.add("px-4", "py-2", "cursor-pointer", "hover:bg-gray-200");
+                    suggestionItem.textContent = product;
+                    suggestionItem.addEventListener("click", () => {
+                        searchInput.value = product;
+                        suggestionsContainer.innerHTML = "";
+                    });
+                    suggestionsContainer.appendChild(suggestionItem);
+                });
+            }
+        });
+
+
+
+        // scroll up/down //
+
+        const scrollContainer = document.getElementById('scrollContainer');
+        const toggleButton = document.getElementById('toggleButton');
+        const handle = document.querySelector('.handle');
+        const overlay = document.getElementById('overlay');
+        const navbar = document.querySelector('.navbar'); // Selecting your nav using the 'navbar' class
+        let isContainerVisible = false;
+
+// Ensure the container is closed initially
+        scrollContainer.style.display = 'none';
+        overlay.style.display = 'none';
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 0) {
+                scrollContainer.classList.remove('h-50vh');
+                scrollContainer.classList.add('h-screen');
+            } else {
+                scrollContainer.classList.remove('h-screen');
+                scrollContainer.classList.add('h-50vh');
+            }
+        });
+
+        toggleButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            toggleContainer();
+        });
+
+        overlay.addEventListener('click', () => {
+            if (isContainerVisible) {
+                toggleContainer();
+            }
+        });
+
+        handle.addEventListener('click', () => {
+            if (scrollContainer.classList.contains('h-50vh')) {
+                scrollContainer.classList.remove('h-50vh');
+                scrollContainer.classList.add('h-screen');
+            } else {
+                scrollContainer.classList.remove('h-screen');
+                scrollContainer.classList.add('h-50vh');
+            }
+        });
+
+        function toggleContainer() {
+            isContainerVisible = !isContainerVisible;
+
+            scrollContainer.style.display = isContainerVisible ? 'block' : 'none';
+            overlay.style.display = isContainerVisible ? 'block' : 'none';
+
+            // Toggle the hidden-nav class to hide/show the navbar without affecting other elements
+            navbar.classList.toggle('hidden-nav', isContainerVisible);
+        }
+
+
+        document.querySelectorAll('.accordion-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const targetId = button.getAttribute('data-accordion-target');
+                const targetElement = document.querySelector(targetId);
+
+                // Check if the target element is currently hidden
+                const isCollapsed = targetElement.classList.contains('hidden');
+
+                // Close all other accordion items
+                document.querySelectorAll('.accordion-collapse').forEach(content => {
+                    content.classList.add('hidden');
+                    content.previousElementSibling.querySelector('svg').classList.remove('rotate-180');
+                });
+
+                if (isCollapsed) {
+                    // Show the current accordion item
+                    targetElement.classList.remove('hidden');
+                    button.querySelector('svg').classList.add('rotate-180');
+                } else {
+                    // Hide the current accordion item
+                    targetElement.classList.add('hidden');
+                    button.querySelector('svg').classList.remove('rotate-180');
+                }
+            });
+        });
+
+
+
+
+        // hamburger nav //
+
+        document.getElementById("menu-button").addEventListener("click", function() {
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("hidden");
+        });
+
+
+        // modal image //
+        let currentIndex = 0;
+        const images = ["images/f2e63254a2a5f969f497511a39de017c.jpg" , "images/befee6653833ac60ea385dd378dede7e.jpg"]; // Update with actual image paths
+
+        // Click on the image to open modal
+        document.getElementById('modal-image').addEventListener('click', function() {
+            const clickedImageSrc = this.src;
+            currentIndex = images.indexOf(clickedImageSrc); // Find the index of the clicked image
+            openImageModal(clickedImageSrc);
+        });
+
+        // Close modal when clicking the close button
+        document.getElementById('close-button').addEventListener('click', function() {
+            closeImageModal();
+        });
+
+        // Close modal when clicking outside the image
+        document.getElementById('image-modal').addEventListener('click', function(e) {
+            if (e.target === this) { // Check if the click is on the background (outside modal-content)
+                closeImageModal();
+            }
+        });
+
+        // Navigate to the next image
+        document.getElementById('next-button').addEventListener('click', function() {
+            nextImage();
+        });
+
+        // Navigate to the previous image
+        document.getElementById('prev-button').addEventListener('click', function() {
+            prevImage();
+        });
+
+        function openImageModal(imageSrc) {
+            const imageModal = document.getElementById('image-modal');
+            const largeImage = document.getElementById('large-image');
+
+            largeImage.src = imageSrc;
+            imageModal.classList.remove('hidden');
+        }
+
+        function closeImageModal() {
+            const imageModal = document.getElementById('image-modal');
+            imageModal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden'); // Remove overflow-hidden when modal is closed
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateImage();
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage();
+        }
+
+        function updateImage() {
+            const largeImage = document.getElementById('large-image');
+            largeImage.src = images[currentIndex];
+            resetTransform(); // Reset transformations when switching images
+        }
+
+        // Variables for zoom and pan
+        const largeImage = document.getElementById('large-image');
+        const modalContent = document.getElementById('modal-content');
+        let scale = 1;
+        let isDragging = false;
+        let startX = 0;
+        let startY = 0;
+        let translateX = 0;
+        let translateY = 0;
+        let lastTranslateX = 0;
+        let lastTranslateY = 0;
+
+        // Mouse down event to start dragging
+        largeImage.addEventListener('mousedown', function(e) {
+            isDragging = true;
+            startX = e.clientX - lastTranslateX;
+            startY = e.clientY - lastTranslateY;
+            modalContent.classList.add('overflow-hidden');
+            document.body.classList.add('overflow-hidden'); // Hide scrollbars when zooming/panning
+            largeImage.style.cursor = 'grabbing';
+        });
+
+        // Mouse move event for panning
+        largeImage.addEventListener('mousemove', function(e) {
+            if (isDragging) {
+                translateX = e.clientX - startX;
+                translateY = e.clientY - startY;
+
+                // Limit movement to within the boundaries of the image
+                const maxX = (largeImage.width * scale - largeImage.width) / 2;
+                const maxY = (largeImage.height * scale - largeImage.height) / 2;
+
+                translateX = Math.max(-maxX, Math.min(maxX, translateX));
+                translateY = Math.max(-maxY, Math.min(maxY, translateY));
+
+                updateTransform();
+            }
+        });
+
+        // Mouse up event to stop dragging
+        largeImage.addEventListener('mouseup', function() {
+            isDragging = false;
+            lastTranslateX = translateX;
+            lastTranslateY = translateY;
+            largeImage.style.cursor = 'grab';
+        });
+
+        // Mouse out event to stop dragging if mouse leaves the image
+        largeImage.addEventListener('mouseout', function() {
+            isDragging = false;
+            largeImage.style.cursor = 'grab';
+        });
+
+        // Double-click to zoom in/out
+        largeImage.addEventListener('dblclick', function() {
+            if (scale === 1) {
+                scale = 2;
+            } else {
+                resetTransform(); // Reset to initial state
+            }
+            updateTransform();
+        });
+
+        function updateTransform() {
+            largeImage.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
+        }
+
+        function resetTransform() {
+            scale = 1;
+            translateX = 0;
+            translateY = 0;
+            lastTranslateX = 0;
+            lastTranslateY = 0;
+            updateTransform();
+            modalContent.classList.remove('overflow-hidden');
+            document.body.classList.remove('overflow-hidden'); // Show scrollbars when zooming out
+            largeImage.style.cursor = 'zoom-in';
+        }
+        // modal image //
+
+        document.querySelectorAll('.show-notification').forEach(button => {
+            button.addEventListener('click', function (event) {
+                event.preventDefault();  // Prevent default anchor behavior
+
+                // Get the card element
+                const card = event.currentTarget.closest('.card');
+
+                // Get the card image source from the data-image attribute
+                const imageUrl = card.dataset.image;
+
+                // Set the notification image to match the card's image
+                const notificationImage = document.getElementById('pop-notification-image');
+                notificationImage.src = imageUrl;
+
+                // Show the notification with animation
+                const notificationContainer = document.getElementById('pop-notification-container');
+                notificationContainer.classList.remove('hidden', 'translate-y-4', 'opacity-0');
+                notificationContainer.classList.add('translate-y-0', 'opacity-100', 'animate-bounceIn');
+
+                // Auto-hide the notification after 4 seconds
+                setTimeout(() => {
+                    hideNotification();
+                }, 4000); // 4000 milliseconds = 4 seconds
+            });
+        });
+
+        function hideNotification() {
+            const notificationContainer = document.getElementById('pop-notification-container');
+
+            // Hide with animation
+            notificationContainer.classList.add('translate-y-4', 'opacity-0');
+            notificationContainer.classList.remove('translate-y-0', 'opacity-100', 'animate-bounceIn');
+
+            // Delay adding 'hidden' to let animation finish
+            setTimeout(() => {
+                notificationContainer.classList.add('hidden');
+            }, 300); // match with animation duration
+        }
+
+        document.getElementById('hide-notification').addEventListener('click', function () {
+            hideNotification();
+        });
+
+
+
+
+        // offcanvas //
+
+        // JavaScript to control the offcanvas and comments
+        const toggleOffcanvas = document.getElementById('toggleOffcanvas');
+        const offcanvas = document.getElementById('offcanvas');
+        const closeOffcanvas = document.getElementById('closeOffcanvas');
+        const submitComment = document.getElementById('submitComment');
+        const commentInput = document.getElementById('commentInput');
+        const commentsList = document.getElementById('commentsList');
+
+        // Function to toggle offcanvas visibility
+        const toggleOffcanvasVisibility = () => {
+            offcanvas.classList.toggle('translate-y-full');
+            offcanvas.classList.toggle('translate-y-0');
+        };
+
+        // Open/close offcanvas with the button
+        toggleOffcanvas.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default anchor behavior
+            toggleOffcanvasVisibility();
+        });
+
+        // Close offcanvas with the close button
+        closeOffcanvas.addEventListener('click', () => {
+            offcanvas.classList.add('translate-y-full');
+            offcanvas.classList.remove('translate-y-0');
+        });
+
+        // Close offcanvas when clicking outside of it
+        document.addEventListener('click', (e) => {
+            if (!offcanvas.contains(e.target) && !toggleOffcanvas.contains(e.target) && !offcanvas.classList.contains('translate-y-full')) {
+                offcanvas.classList.add('translate-y-full');
+                offcanvas.classList.remove('translate-y-0');
+            }
+        });
+
+        // Handle comment submission
+        submitComment.addEventListener('click', () => {
+            const commentText = commentInput.value.trim();
+
+            if (commentText) {
+                // Create new comment element
+                const newComment = document.createElement('div');
+                newComment.classList.add('flex', 'items-start', 'space-x-4');
+
+                newComment.innerHTML = `
+                    <div class="flex-shrink-0">
+                        <img src="https://via.placeholder.com/40" alt="User Avatar" class="w-10 h-10 rounded-full">
+                    </div>
+                    <div>
+                        <div class="bg-gray-100 p-3 rounded-lg shadow-sm">
+                            <h4 class="font-semibold">Anonymous</h4>
+                            <p class="text-gray-700">${commentText}</p>
+                        </div>
+                        <div class="text-sm text-gray-500 mt-1">Just now</div>
+                    </div>
+                `;
+
+                // Append the new comment to the list
+                commentsList.appendChild(newComment);
+
+                // Clear the text area
+                commentInput.value = '';
+            }
+        });
+
+        // offcanvas //
+
+
+
+
+        // offcanvas card //
+
+        // Function to update the cart total price
+        const updateTotalPrice = () => {
+            const prices = document.querySelectorAll('.product-price');
+            let total = 0;
+            prices.forEach(price => {
+                const quantity = parseInt(price.closest('.product-item').querySelector('.quantity-input').value);
+                total += parseFloat(price.textContent.replace('$', '')) * quantity;
+            });
+            document.querySelector('.total-price').textContent = `$${total.toFixed(2)}`;
+        };
+
+        // Function to add product to the cart
+        const addToCart = (title, image, price) => {
+            const productList = document.querySelector('.product-list');
+
+            // Create a new product card for the cart
+            const productCard = document.createElement('div');
+            productCard.classList.add('flex', 'items-center', 'space-x-4', 'p-4', 'bg-gray-50', 'rounded-lg', 'shadow-sm', 'product-item');
+
+            // Product Image
+            const img = document.createElement('img');
+            img.src = image;
+            img.alt = title;
+            img.classList.add('w-20', 'h-20', 'rounded-lg');
+
+            // Product Details
+            const detailsDiv = document.createElement('div');
+            detailsDiv.classList.add('flex-1');
+            const productTitle = document.createElement('h3');
+            productTitle.classList.add('text-lg', 'font-semibold');
+            productTitle.textContent = title;
+            const productPrice = document.createElement('p');
+            productPrice.classList.add('product-price', 'text-blue-500', 'font-semibold', 'mt-2');
+            productPrice.textContent = `${price}`;
+
+            // Quantity controls
+            const quantityControl = document.createElement('div');
+            quantityControl.classList.add('flex', 'items-center', 'space-x-2', 'mt-2');
+            const minusButton = document.createElement('button');
+            minusButton.classList.add('px-2', 'py-1', 'bg-gray-200', 'rounded', 'text-gray-700', 'hover:bg-gray-300', 'quantity-minus');
+            minusButton.textContent = '-';
+            const quantityInput = document.createElement('input');
+            quantityInput.classList.add('w-12', 'text-center', 'quantity-input', 'bg-white', 'border', 'border-gray-300', 'rounded-lg', 'p-1');
+            quantityInput.type = 'number';
+            quantityInput.value = 1;
+            const plusButton = document.createElement('button');
+            plusButton.classList.add('px-2', 'py-1', 'bg-gray-200', 'rounded', 'text-gray-700', 'hover:bg-gray-300', 'quantity-plus');
+            plusButton.textContent = '+';
+
+            quantityControl.appendChild(minusButton);
+            quantityControl.appendChild(quantityInput);
+            quantityControl.appendChild(plusButton);
+
+            detailsDiv.appendChild(productTitle);
+            detailsDiv.appendChild(productPrice);
+            detailsDiv.appendChild(quantityControl);
+
+            // Remove Button
+            const removeButton = document.createElement('button');
+            removeButton.classList.add('remove-product', 'text-red-500', 'hover:text-red-600');
+            removeButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>';
+
+            productCard.appendChild(img);
+            productCard.appendChild(detailsDiv);
+            productCard.appendChild(removeButton);
+
+            productList.appendChild(productCard);
+
+            // Update the total price
+            updateTotalPrice();
+
+            // Add event listeners for the quantity buttons
+            plusButton.addEventListener('click', function () {
+                quantityInput.value = parseInt(quantityInput.value) + 1;
+                updateTotalPrice();
+            });
+
+            minusButton.addEventListener('click', function () {
+                if (parseInt(quantityInput.value) > 1) {
+                    quantityInput.value = parseInt(quantityInput.value) - 1;
+                    updateTotalPrice();
+                }
+            });
+
+            // Add event listener to remove product from the cart
+            removeButton.addEventListener('click', function () {
+                productCard.remove();
+                updateTotalPrice();
+            });
+        };
+
+        // Toggle Cart Offcanvas Visibility
+        const toggleCartOffcanvasVisibility = () => {
+            const cartOffcanvas = document.getElementById('cartOffcanvas');
+            if (cartOffcanvas.classList.contains('translate-y-full')) {
+                cartOffcanvas.classList.remove('translate-y-full');
+                cartOffcanvas.classList.add('translate-y-0');
+            } else {
+                cartOffcanvas.classList.add('translate-y-full');
+                cartOffcanvas.classList.remove('translate-y-0');
+            }
+        };
+
+        // Handle click event for add-to-cart icons
+        document.querySelectorAll('.add-to-cart').forEach(icon => {
+            icon.addEventListener('click', function (e) {
+                e.preventDefault(); // Prevent the default action
+                const card = this.closest('.card');
+                const title = card.getAttribute('data-title');
+                const image = card.getAttribute('data-image');
+                const price = `$${parseFloat(card.getAttribute('data-price')).toFixed(2)}`;
+                addToCart(title, image, price);
+                toggleCartOffcanvasVisibility();
+            });
+        });
+
+        // Open/close cart offcanvas
+        document.getElementById('toggleCartOffcanvas').addEventListener('click', function (e) {
+            e.preventDefault(); // Prevent the default action
+            toggleCartOffcanvasVisibility();
+        });
+
+        // Close offcanvas with the close button
+        document.querySelector('.close-cart').addEventListener('click', () => {
+            document.getElementById('cartOffcanvas').classList.add('translate-y-full');
+            document.getElementById('cartOffcanvas').classList.remove('translate-y-0');
+        });
+
+        // Close offcanvas when clicking outside of it
+        document.addEventListener('click', (e) => {
+            const cartOffcanvas = document.getElementById('cartOffcanvas');
+            const toggleButton = document.getElementById('toggleCartOffcanvas');
+            if (!cartOffcanvas.contains(e.target) && !toggleButton.contains(e.target) && !cartOffcanvas.classList.contains('translate-y-full')) {
+                cartOffcanvas.classList.add('translate-y-full');
+                cartOffcanvas.classList.remove('translate-y-0');
+            }
+        });
+        // offcanvas card //
+
+
+
+        // email //
+
+        const express = require('express');
+        const nodemailer = require('nodemailer');
+        const bodyParser = require('body-parser');
+
+        const app = express();
+
+// Middleware to parse form data
+        app.use(bodyParser.urlencoded({ extended: false }));
+
+// Serve static files (your HTML/CSS/JS)
+        app.use(express.static('public'));
+
+// Email sending route
+        app.post('/send-email', (req, res) => {
+            const { firstName, lastName, email, message } = req.body;
+
+            // Create a transporter using your email service
+            const transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    user: 'your-email@gmail.com', // Replace with your email
+                    pass: 'your-email-password'   // Replace with your email password
+                }
+            });
+
+            const mailOptions = {
+                from: email,
+                to: 'frostyfog0014@gmail.com', // Your email
+                subject: `Message from ${firstName} ${lastName}`,
+                text: message
+            };
+
+            transporter.sendMail(mailOptions, (error, info) => {
+                if (error) {
+                    console.log(error);
+                    res.status(500).send('Error sending email');
+                } else {
+                    console.log('Email sent: ' + info.response);
+                    res.send('Email sent successfully!');
+                }
+            });
+        });
+
+        const PORT = process.env.PORT || 3000;
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
+        });
+
+        // email //
+
+
+    });
+</script>
+</body>
+</html>
